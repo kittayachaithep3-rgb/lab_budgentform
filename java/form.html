@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="th">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>บันทึกรายรับรายจ่าย</title>
     <script src="js/budgetform.js" defer></script>
 </head>
 
@@ -14,38 +14,42 @@
             <label for="name">ชื่อรายการ</label>
             <input type="text" name="name" id="name" required maxlength="20">
             <br><br>
+
             <label for="number">จำนวนเงิน</label>
             <input type="number" name="number" id="number" required step="1" min="0">
             <br><br>
+
             <label for="date">วันที่</label>
-            <input type="date" name="date" id="date" >
+            <input type="date" name="date" id="date">
             <br><br>
+
             <label for="time">เวลา</label>
-            <input type="time" name="time" id="time" >
+            <input type="time" name="time" id="time">
             <br><br>
-            <label for="Income&Expenses">รายรับรายจ่าย</label>
-            <select name="Income&Expense" id="Income&Expense" required>
+
+            <label for="incomeExpense">รายรับรายจ่าย</label>
+            <select name="incomeExpense" id="incomeExpense" required>
                 <option value="">กรุณาเลือกรายการ</option>
                 <option value="Income">รายรับ</option>
                 <option value="Expenses">รายจ่าย</option>
             </select>
             <br><br>
+
             <input type="submit" value="ตกลง">
             <input type="reset" value="ยกเลิก">
-
         </form>
     </div>
-    <div>ส่วนที่ใช้แสดงผลรายรับทั้งหมด</div>
-        <ul id="Incomelist">
-            
-            <p id="TotalIncome">ยอดรวมรายรับ</p>
-        </ul>
-    <div>ส่วนที่ใช้แสดงผลรายจ่ายทั้งหมด</div>
-        <ul id="Expenseslist">
 
-            <p id="TotalExpenses">ยอดรวมรายจ่าย</p>
-        </ul>
+    <div>ส่วนที่ใช้แสดงผลรายรับทั้งหมด</div>
+    <ul id="Incomelist"></ul>
+    <p id="TotalIncome">ยอดรวมรายรับ: 0</p>
+
+    <div>ส่วนที่ใช้แสดงผลรายจ่ายทั้งหมด</div>
+    <ul id="Expenseslist"></ul>
+    <p id="TotalExpenses">ยอดรวมรายจ่าย: 0</p>
+
     <div>ส่วนที่ใช้แสดงผลยอดคงเหลือ</div>
+    <p id="TotalBalance">ยอดคงเหลือ: 0</p>
 </body>
 
 </html>
