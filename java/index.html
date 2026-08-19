@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>บันทึกรายรับรายจ่าย</title>
+    <link rel="stylesheet" href="stlye.css">
+    <script src="js/budgetform.js" defer></script>
+</head>
+
+<body>
+    <div class="container">
+        <h1>บันทึกรายรับรายจ่าย</h1>
+
+        <div class="passbook">
+            <form id="budgetform">
+                <label for="name">ชื่อรายการ</label>
+                <input type="text" name="name" id="name" required maxlength="20">
+                <br><br>
+
+                <label for="number">จำนวนเงิน</label>
+                <input type="number" name="number" id="number" required step="1" min="0">
+                <br><br>
+
+                <label for="date">วันที่</label>
+                <input type="date" name="date" id="date">
+                <br><br>
+
+                <label for="time">เวลา</label>
+                <input type="time" name="time" id="time">
+                <br><br>
+
+                <label for="incomeExpense">รายรับรายจ่าย</label>
+                <select name="incomeExpense" id="incomeExpense" required>
+                    <option value="">กรุณาเลือกรายการ</option>
+                    <option value="Income">รายรับ</option>
+                    <option value="Expenses">รายจ่าย</option>
+                </select>
+                <br><br>
+
+                <input type="submit" value="ตกลง">
+                <input type="reset" value="ยกเลิก">
+            </form>
+        </div>
+
+        <div class="list-section income-section">
+            <div>รายรับทั้งหมด</div>
+            <ul id="Incomelist"></ul>
+            <p id="TotalIncome">ยอดรวมรายรับ: 0</p>
+        </div>
+
+        <div class="list-section expense-section">
+            <div>รายจ่ายทั้งหมด</div>
+            <ul id="Expenseslist"></ul>
+            <p id="TotalExpenses">ยอดรวมรายจ่าย: 0</p>
+        </div>
+
+        <div class="balance-section">
+            <div>ยอดคงเหลือ</div>
+            <p id="TotalBalance">ยอดคงเหลือ: 0</p>
+        </div>
+    </div>
+</body>
+
+</html>
