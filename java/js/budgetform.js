@@ -39,6 +39,13 @@ function renderTransactions() {
         const listItem = document.createElement('li');
         listItem.textContent = `${transaction.name} - ${transaction.amount} `;
 
+        
+        if (transaction.incomeExpense === 'Income') {
+            listItem.style.color = 'green';
+        } else {
+            listItem.style.color = 'red';
+        }
+
         const deleteBtn = document.createElement('button');
         deleteBtn.textContent = 'ลบ';
         deleteBtn.type = 'button';
@@ -57,6 +64,12 @@ function renderTransactions() {
 }
 
 function deleteTransaction(index) {
+    
+    const confirmDelete = confirm('คุณต้องการลบรายการนี้ใช่หรือไม่?');
+    if (!confirmDelete) {
+        return;
+    }
+
     budgetArray.splice(index, 1);
     renderTransactions();
     updateSummary();
